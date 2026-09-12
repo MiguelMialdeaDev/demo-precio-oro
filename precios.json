@@ -1,0 +1,123 @@
+{
+ "spot_usd_oz": 4349.7,
+ "usd_gramo_puro": 139.846,
+ "usd_gramo": {
+  "10": 58.32,
+  "14": 81.81,
+  "18": 104.88,
+  "22": 128.1,
+  "24": 139.71
+ },
+ "fuente": "https://api.gold-api.com/price/XAU",
+ "fuente_hora": "2026-09-12T19:12:03Z",
+ "actualizado": "2026-09-12T21:12:17+02:00",
+ "proxima_revision": "2026-09-12T22:12:17+02:00",
+ "cada_minutos": 60,
+ "margen_venta": 1.35,
+ "pago_tasacion": {
+  "24": 0.9,
+  "22": 0.88,
+  "18": 0.85,
+  "14": 0.82,
+  "10": 0.78
+ },
+ "aviso": "Precio orientativo calculado con el oro de hoy. El precio final se confirma en tienda al ver la pieza.",
+ "piezas": [
+  {
+   "id": "cubana-14k-22-9",
+   "nombre": "Cadena cubana",
+   "tipo": "cadena",
+   "kilates": 14,
+   "gramos": 35.6,
+   "largo": "22 pulgadas",
+   "mano_obra": 250,
+   "valor_metal_usd": 2912.43,
+   "precio_usd": 4180,
+   "tasacion_hasta_usd": 2390
+  },
+  {
+   "id": "pulsera-14k-81-7",
+   "nombre": "Pulsera eslabón grueso",
+   "tipo": "pulsera",
+   "kilates": 14,
+   "gramos": 81.7,
+   "largo": "8 pulgadas",
+   "mano_obra": 400,
+   "valor_metal_usd": 6683.87,
+   "precio_usd": 9420,
+   "tasacion_hasta_usd": 5480
+  },
+  {
+   "id": "sello-14k-8-7",
+   "nombre": "Anillo sello",
+   "tipo": "anillo",
+   "kilates": 14,
+   "gramos": 8.7,
+   "largo": "talla 10",
+   "mano_obra": 120,
+   "valor_metal_usd": 711.75,
+   "precio_usd": 1080,
+   "tasacion_hasta_usd": 585
+  },
+  {
+   "id": "figaro-14k-5-75",
+   "nombre": "Cadena figaro fina",
+   "tipo": "cadena",
+   "kilates": 14,
+   "gramos": 5.75,
+   "largo": "22 pulgadas",
+   "mano_obra": 60,
+   "valor_metal_usd": 470.41,
+   "precio_usd": 700,
+   "tasacion_hasta_usd": 385
+  },
+  {
+   "id": "medalla-14k-18-7",
+   "nombre": "Medalla colgante",
+   "tipo": "colgante",
+   "kilates": 14,
+   "gramos": 18.7,
+   "largo": "1,25 pulgadas",
+   "mano_obra": 150,
+   "valor_metal_usd": 1529.85,
+   "precio_usd": 2220,
+   "tasacion_hasta_usd": 1255
+  },
+  {
+   "id": "argollas-18k-6-2",
+   "nombre": "Argollas",
+   "tipo": "aretes",
+   "kilates": 18,
+   "gramos": 6.2,
+   "largo": "par",
+   "mano_obra": 90,
+   "valor_metal_usd": 650.28,
+   "precio_usd": 970,
+   "tasacion_hasta_usd": 555
+  },
+  {
+   "id": "bebe-10k-4-1",
+   "nombre": "Pulsera cubana de bebé",
+   "tipo": "pulsera",
+   "kilates": 10,
+   "gramos": 4.1,
+   "largo": "5 pulgadas",
+   "mano_obra": 60,
+   "valor_metal_usd": 239.09,
+   "precio_usd": 380,
+   "tasacion_hasta_usd": 185
+  },
+  {
+   "id": "franco-18k-28-4",
+   "nombre": "Cadena franco",
+   "tipo": "cadena",
+   "kilates": 18,
+   "gramos": 28.4,
+   "largo": "24 pulgadas",
+   "mano_obra": 220,
+   "valor_metal_usd": 2978.72,
+   "precio_usd": 4240,
+   "tasacion_hasta_usd": 2530
+  }
+ ]
+}

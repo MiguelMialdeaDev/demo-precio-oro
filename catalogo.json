@@ -1,0 +1,13 @@
+{
+ "_nota": "Catalogo de muestra con marca neutra. Pesos y kilates del tipo de pieza que vende una joyeria de oro americana (cubanas, figaro, franco, sellos, argollas). La mano de obra es fija por pieza; el metal se recalcula solo.",
+ "piezas": [
+  {"id": "cubana-14k-22-9", "nombre": "Cadena cubana", "tipo": "cadena", "kilates": 14, "gramos": 35.6, "largo": "22 pulgadas", "mano_obra": 250},
+  {"id": "pulsera-14k-81-7", "nombre": "Pulsera eslabón grueso", "tipo": "pulsera", "kilates": 14, "gramos": 81.7, "largo": "8 pulgadas", "mano_obra": 400},
+  {"id": "sello-14k-8-7", "nombre": "Anillo sello", "tipo": "anillo", "kilates": 14, "gramos": 8.7, "largo": "talla 10", "mano_obra": 120},
+  {"id": "figaro-14k-5-75", "nombre": "Cadena figaro fina", "tipo": "cadena", "kilates": 14, "gramos": 5.75, "largo": "22 pulgadas", "mano_obra": 60},
+  {"id": "medalla-14k-18-7", "nombre": "Medalla colgante", "tipo": "colgante", "kilates": 14, "gramos": 18.7, "largo": "1,25 pulgadas", "mano_obra": 150},
+  {"id": "argollas-18k-6-2", "nombre": "Argollas", "tipo": "aretes", "kilates": 18, "gramos": 6.2, "largo": "par", "mano_obra": 90},
+  {"id": "bebe-10k-4-1", "nombre": "Pulsera cubana de bebé", "tipo": "pulsera", "kilates": 10, "gramos": 4.1, "largo": "5 pulgadas", "mano_obra": 60},
+  {"id": "franco-18k-28-4", "nombre": "Cadena franco", "tipo": "cadena", "kilates": 18, "gramos": 28.4, "largo": "24 pulgadas", "mano_obra": 220}
+ ]
+}
