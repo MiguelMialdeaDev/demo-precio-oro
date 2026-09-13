@@ -8,200 +8,208 @@
 <meta name="description" content="Demo: una joyería cuyos precios se recalculan solos con el oro en vivo, sellados con hora y con aviso de confirmar en tienda.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=EB+Garamond:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="tokens.css">
 <style>
-/* Forge · macrostructure: Stat-Led · tone: lujo sobrio · anchor hue: oro (75°)
- * nav: N6 masthead · footer: Ft5 statement · CTA: C1 outlined chip
- * pre-emit critique: P5 H5 E4 S5 R5 V4 · demo con marca neutra
+/* Forge · macrostructure: Stat-Led · theme: studied-DNA (arielsjewelry.com) · nav: N12 · footer: Ft2
+ * pre-emit critique: P4 H5 E4 S5 R4 V3 · nombre neutro en público
  */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { overflow-x: clip; }
-body {
-  margin: 0; background: var(--color-paper); color: var(--color-ink);
-  font-family: var(--font-body); font-size: var(--text-md); line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-}
-h1, h2, h3 { font-family: var(--font-display); font-style: normal; font-weight: 600; margin: 0; overflow-wrap: anywhere; min-width: 0; }
+body { margin: 0; background: var(--color-paper); color: var(--color-ink); font-family: var(--font-body); font-size: var(--text-md); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { margin: 0; font-style: normal; overflow-wrap: anywhere; min-width: 0; }
+h1, h2 { font-family: var(--font-display); font-weight: 400; text-transform: uppercase; letter-spacing: .04em; line-height: 1.2; }
+h3 { font-family: var(--font-body); font-weight: 500; }
 p { margin: 0; }
 a { color: inherit; }
-.tnum { font-variant-numeric: tabular-nums; }
-.muted { color: var(--color-muted); }
+.tnum { font-variant-numeric: tabular-nums lining-nums; }
 :focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.wrap { max-width: 1200px; margin: 0 auto; padding-inline: var(--page-gutter); }
+.center { text-align: center; }
 
-/* ── N6 masthead ── */
-.nav-mast { display: grid; gap: var(--space-2xs); padding: var(--space-md) var(--page-gutter) 0; text-align: center; }
-.mast-line { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: .08em; text-transform: uppercase; color: var(--color-muted); }
-.mast-name { font-size: clamp(1.75rem, 5vw, 3rem); letter-spacing: .04em; line-height: .95; }
-.mast-nav ul { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); list-style: none; padding: 0; margin: var(--space-2xs) 0 0; }
-.mast-nav a { font-size: var(--text-sm); text-decoration: none; white-space: nowrap; padding: var(--space-2xs) 0; border-bottom: 1px solid transparent; transition: border-color var(--dur-fast) var(--ease-out); }
-.mast-nav a:hover { border-bottom-color: var(--color-accent); }
-.mast-nav a.tel { color: var(--color-accent-ink); font-weight: 500; }
-.mast-rule { border: 0; border-top: var(--rule-hair) solid var(--color-rule); border-bottom: var(--rule-hair) solid var(--color-rule); height: 4px; margin: var(--space-sm) 0 0; }
+/* ── barra de anuncio + cabecera (N12) ── */
+.utility { background: var(--color-paper); border-bottom: var(--rule-hair) solid var(--color-rule); font-size: var(--text-xs); padding: var(--space-2xs) var(--page-gutter); color: var(--color-ink-2); }
+.announce { background: var(--color-accent); color: var(--color-paper); font-size: var(--text-sm); }
+.announce .wrap { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-lg); justify-content: space-between; align-items: center; min-height: 44px; }
+.announce a { color: inherit; text-decoration: none; white-space: nowrap; }
+.announce a:hover { text-decoration: underline; }
+.announce .msg { font-weight: 500; letter-spacing: .01em; }
+.head { padding: var(--space-xl) var(--page-gutter) var(--space-md); text-align: center; }
+.wordmark { font-family: var(--font-display); font-size: clamp(1.4rem, 4.5vw, 2.6rem); letter-spacing: .12em; text-transform: uppercase; }
+.wordmark .gold { color: var(--color-gold); }
+.head nav ul { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: var(--space-lg); list-style: none; margin: var(--space-md) 0 0; padding: 0; }
+.head nav a { font-size: var(--text-sm); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; white-space: nowrap; padding: var(--space-2xs) 0; border-bottom: 2px solid transparent; transition: border-color var(--dur-fast) var(--ease-out); }
+.head nav a:hover { border-bottom-color: var(--color-accent); }
 
-/* ── Stat hero ── */
-.stat-hero { padding: var(--space-2xl) var(--page-gutter) var(--space-xl); max-width: 1120px; margin: 0 auto; }
-.figure { font-family: var(--font-display); font-size: var(--text-display); line-height: .9; letter-spacing: -.02em; font-weight: 500; color: var(--color-ink); overflow-wrap: anywhere; }
-.figure .unit { font-size: .3em; color: var(--color-muted); letter-spacing: 0; margin-left: .15em; vertical-align: baseline; }
-.figure.is-live::after { content: ""; display: inline-block; width: .12em; height: .12em; margin-left: .25em; border-radius: 50%; background: var(--color-ok); vertical-align: middle; }
-.stat-hero h1 { font-size: clamp(1.6rem, 4vw, 2.6rem); line-height: 1.15; max-width: 22ch; margin-top: var(--space-lg); }
-.qualifier { max-width: var(--measure); margin-top: var(--space-md); color: var(--color-ink-2); }
-.aviso { display: block; margin-top: var(--space-sm); font-size: var(--text-sm); color: var(--color-muted); max-width: var(--measure); }
-.cta-outline {
-  display: inline-flex; align-items: center; gap: .4em; margin-top: var(--space-lg);
-  padding: .7rem 1.2rem; min-height: 44px; border: 1px solid var(--color-ink); border-radius: var(--radius-sm);
-  background: transparent; color: var(--color-ink); font: inherit; font-weight: 500; text-decoration: none; white-space: nowrap; cursor: pointer;
-  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
-}
-.cta-outline:hover { background: var(--color-ink); color: var(--color-paper); }
-.cta-outline:active { transform: translateY(1px); }
-.cta-outline[disabled], .cta-outline[aria-busy="true"] { opacity: .55; cursor: progress; }
+/* ── botón: el suyo, cuadrado y azul ── */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5em; min-height: 46px; padding: .75rem 1.9rem; background: var(--color-accent); color: var(--color-paper); border: 1px solid var(--color-accent); border-radius: var(--radius); font: inherit; font-size: var(--text-md); font-weight: 500; letter-spacing: .02em; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }
+.btn:hover { background: var(--color-accent-hover); }
+.btn:active { transform: translateY(1px); }
+.btn[disabled], .btn[aria-busy="true"] { opacity: .55; cursor: progress; }
+.btn.ghost { background: transparent; color: var(--color-accent); }
+.btn.ghost:hover { background: var(--color-accent); color: var(--color-paper); }
 
-/* ── Supporting stats ── */
-.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); gap: 0; border-top: var(--rule-hair) solid var(--color-rule); border-bottom: var(--rule-hair) solid var(--color-rule); max-width: 1120px; margin: 0 var(--page-gutter); }
-@media (min-width: 1248px) { .stats { margin: 0 auto; } }
-.stats > div { padding: var(--space-md) 0; border-top: var(--rule-hair) solid var(--color-rule); }
-.stats > div:first-child { border-top: 0; }
-@media (min-width: 640px) { .stats > div { border-top: 0; border-left: var(--rule-hair) solid var(--color-rule); padding-inline: var(--space-md); } .stats > div:first-child { border-left: 0; padding-inline-start: 0; } }
-.stats .n { font-family: var(--font-display); font-size: var(--text-2xl); line-height: 1; font-weight: 500; }
-.stats .l { margin-top: var(--space-2xs); font-size: var(--text-sm); color: var(--color-muted); }
+/* ── hero (Stat-Led, centrado como su tema) ── */
+.hero { background: var(--color-paper-warm); padding: var(--space-2xl) var(--page-gutter); text-align: center; }
+.hero .kick { font-size: var(--text-sm); letter-spacing: .18em; text-transform: uppercase; color: var(--color-ink-2); }
+.figure { font-family: var(--font-display); font-size: var(--text-display); line-height: 1.05; letter-spacing: .02em; margin-top: var(--space-sm); overflow-wrap: anywhere; }
+.figure .unit { font-size: .32em; color: var(--color-muted); letter-spacing: .08em; margin-left: .2em; }
+.figure.is-live::after { content: ""; display: inline-block; width: .13em; height: .13em; margin-left: .3em; border-radius: 50%; background: var(--color-ok); vertical-align: middle; }
+.hero h1 { font-size: clamp(1.1rem, 2.6vw, 1.7rem); max-width: 30ch; margin: var(--space-lg) auto 0; }
+.hero .qual { max-width: var(--measure); margin: var(--space-md) auto 0; font-size: var(--text-lg); color: var(--color-ink-2); }
+.aviso { display: block; font-size: var(--text-sm); color: var(--color-muted); max-width: var(--measure); margin-inline: auto; }
+.hero .aviso { margin-top: var(--space-sm); }
+.hero .btn { margin-top: var(--space-lg); }
 
-/* ── secciones ── */
-section.bloque { padding: var(--space-2xl) var(--page-gutter); max-width: 1120px; margin: 0 auto; }
-section.bloque h2 { font-size: clamp(1.5rem, 3.4vw, 2.2rem); line-height: 1.15; max-width: 24ch; }
-.intro { max-width: var(--measure); margin-top: var(--space-sm); color: var(--color-ink-2); }
+/* ── fila de datos (como su fila de iconos) ── */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); gap: var(--space-lg) var(--space-md); padding: var(--space-xl) 0; text-align: center; border-bottom: var(--rule-hair) solid var(--color-rule); }
+.stats .n { font-family: var(--font-display); font-size: var(--text-xl); line-height: 1.1; }
+.stats .l { margin-top: var(--space-xs); color: var(--color-ink-2); }
 
-/* ── catálogo ── */
-.grid { display: grid; gap: var(--space-lg) var(--space-md); grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); margin-top: var(--space-xl); }
-.pieza { display: grid; gap: var(--space-xs); min-width: 0; }
-.pieza figure { margin: 0; aspect-ratio: 4 / 3; background: var(--color-paper-2); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-sm); display: grid; place-items: center; overflow: hidden; }
-.pieza svg { width: 62%; height: auto; color: var(--color-accent); }
-.pieza h3 { font-size: var(--text-lg); font-weight: 500; }
-.pieza .spec { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted); }
-.pieza .precio { font-family: var(--font-display); font-size: var(--text-xl); line-height: 1; margin-top: var(--space-2xs); transition: color var(--dur-base) var(--ease-out); }
-.pieza .precio.pulse { color: var(--color-accent-ink); }
-.pieza .desglose { font-size: var(--text-xs); color: var(--color-muted); }
-.pieza .tag { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-accent-ink); }
+section.bloque { padding: var(--space-2xl) 0; }
+section.bloque h2 { font-size: clamp(1.2rem, 3vw, 1.9rem); text-align: center; }
+.intro { text-align: center; max-width: var(--measure); margin: var(--space-sm) auto 0; font-size: var(--text-lg); color: var(--color-ink-2); }
+
+/* ── catálogo (tarjetas Dawn) ── */
+.grid { display: grid; gap: var(--space-xl) var(--space-md); grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr)); margin-top: var(--space-xl); }
+.pieza { display: grid; gap: var(--space-2xs); text-align: center; min-width: 0; }
+.pieza figure { margin: 0 0 var(--space-xs); aspect-ratio: 1; background: var(--color-paper); border: var(--rule-hair) solid var(--color-rule); display: grid; place-items: center; overflow: hidden; }
+.pieza svg { width: 58%; height: auto; color: var(--color-gold); }
+.pieza h3 { font-size: var(--text-lg); }
+.pieza .spec { font-size: var(--text-sm); letter-spacing: .06em; text-transform: uppercase; color: var(--color-muted); }
+.pieza .precio { font-size: var(--text-xl); font-weight: 600; margin-top: var(--space-2xs); transition: color var(--dur-base) var(--ease-out); }
+.pieza .precio.pulse { color: var(--color-accent); }
+.pieza .desglose { font-size: var(--text-sm); color: var(--color-muted); }
+.pieza .tag { font-size: var(--text-xs); letter-spacing: .08em; text-transform: uppercase; color: var(--color-accent); }
 
 /* ── tasadora ── */
-.tasa { display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); align-items: start; margin-top: var(--space-xl); }
+.tasa-band { background: var(--color-paper-2); }
+.tasa { display: grid; gap: var(--space-xl); grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); align-items: start; margin-top: var(--space-xl); }
 .campo { display: grid; gap: var(--space-2xs); }
-.campo label { font-size: var(--text-sm); font-weight: 500; }
-.campo input, .campo select {
-  font: inherit; font-family: var(--font-mono); padding: .7rem .9rem; min-height: 44px; width: 100%;
-  border: 1px solid var(--color-rule); border-radius: var(--radius-sm); background: var(--color-paper); color: var(--color-ink);
-  transition: border-color var(--dur-fast) var(--ease-out);
-}
-.campo input:hover, .campo select:hover { border-color: var(--color-muted); }
-.campo input:focus-visible, .campo select:focus-visible { border-color: var(--color-focus); outline-offset: 0; }
+.campo label { font-size: var(--text-sm); letter-spacing: .08em; text-transform: uppercase; }
+.campo input, .campo select { font: inherit; font-size: var(--text-md); padding: .7rem .9rem; min-height: 46px; width: 100%; border: 1px solid var(--color-ink); border-radius: var(--radius); background: var(--color-paper); color: var(--color-ink); transition: border-color var(--dur-fast) var(--ease-out); }
+.campo input:hover, .campo select:hover { border-color: var(--color-accent); }
+.campo input:focus-visible, .campo select:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
 .campo input[aria-invalid="true"] { border-color: var(--color-danger); }
-.campo .err { font-size: var(--text-xs); color: var(--color-danger); min-height: 1.2em; }
-.resultado { border-top: var(--rule-hair) solid var(--color-rule); padding-top: var(--space-md); }
-.resultado .hasta { font-family: var(--font-display); font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1; letter-spacing: -.02em; }
-.resultado .hasta.ok { color: var(--color-accent-ink); }
-.resultado .detalle { margin-top: var(--space-xs); color: var(--color-ink-2); max-width: 40ch; }
+.campo .err { font-size: var(--text-sm); color: var(--color-danger); min-height: 1.3em; }
+.resultado { text-align: center; border: var(--rule-hair) solid var(--color-rule); background: var(--color-paper); padding: var(--space-lg); }
+.resultado .lbl { font-size: var(--text-sm); letter-spacing: .18em; text-transform: uppercase; color: var(--color-ink-2); }
+.resultado .hasta { font-family: var(--font-display); font-size: clamp(1.9rem, 5.5vw, 3.2rem); line-height: 1.1; margin-top: var(--space-xs); }
+.resultado .hasta.ok { color: var(--color-accent); }
+.resultado .detalle { margin: var(--space-sm) auto 0; color: var(--color-ink-2); max-width: 40ch; }
 .resultado .aviso { margin-top: var(--space-xs); }
+.resultado .btn { margin-top: var(--space-md); }
 
-/* ── cómo funciona ── */
-.pasos { margin-top: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); }
-.pasos div { display: grid; grid-template-columns: 3ch 1fr; gap: var(--space-md); padding: var(--space-md) 0; border-bottom: var(--rule-hair) solid var(--color-rule); }
-.pasos .num { font-family: var(--font-mono); color: var(--color-accent-ink); }
-.pasos p { max-width: var(--measure); }
+/* ── cómo funciona (tres columnas como su fila de ventajas) ── */
+.pasos { display: grid; gap: var(--space-xl) var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); margin-top: var(--space-xl); text-align: center; }
+.pasos .n { font-family: var(--font-display); color: var(--color-gold); font-size: var(--text-lg); }
+.pasos h3 { margin-top: var(--space-xs); letter-spacing: .06em; text-transform: uppercase; font-size: var(--text-sm); }
+.pasos p { margin: var(--space-xs) auto 0; max-width: 34ch; color: var(--color-ink-2); }
 
-/* ── Ft5 ── */
-.foot-stmt { padding: var(--space-3xl) var(--page-gutter) var(--space-xl); max-width: 1120px; margin: 0 auto; display: grid; gap: var(--space-lg); }
-.foot-stmt__line { font-family: var(--font-display); font-size: clamp(1.6rem, 4.5vw, 3rem); line-height: 1.05; letter-spacing: -.02em; max-width: 26ch; font-weight: 500; }
-.foot-stmt__meta { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-md); justify-content: space-between; align-items: baseline; padding-top: var(--space-sm); border-top: var(--rule-hair) solid var(--color-rule); font-size: var(--text-sm); color: var(--color-muted); }
-.foot-stmt__meta a { text-decoration: none; border-bottom: 1px solid var(--color-rule); white-space: nowrap; }
+/* ── pie (Ft2, banda azul como su barra) ── */
+.foot { background: var(--color-accent); color: var(--color-paper); padding: var(--space-xl) var(--page-gutter); font-size: var(--text-sm); }
+.foot .wrap { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-lg); justify-content: space-between; align-items: baseline; }
+.foot a { color: inherit; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
-  .cta-outline:active { transform: none; }
+  .btn:active { transform: none; }
 }
 </style>
 </head>
 <body>
 
-<header class="nav-mast">
-  <p class="mast-line">Edición de prueba · precios al día</p>
-  <p class="mast-name" aria-label="Joyería Demo">JOYERÍA DEMO</p>
-  <nav class="mast-nav" aria-label="Principal">
+<p class="utility">Bienvenido a nuestra tienda</p>
+<div class="announce">
+  <div class="wrap">
+    <span class="msg">Precios al día con el oro en vivo · se confirman en tienda</span>
+    <span><a href="tel:+13050000000">☎ (305) 000-0000</a> &nbsp;|&nbsp; <a href="mailto:hola@joyeriademo.example">✉ hola@joyeriademo.example</a></span>
+  </div>
+</div>
+
+<header class="head">
+  <p class="wordmark" data-marca><span class="gold">◆</span> Joyería Demo</p>
+  <nav aria-label="Principal">
     <ul>
       <li><a href="#catalogo">Catálogo</a></li>
       <li><a href="#tasa">Tasa tu oro</a></li>
-      <li><a class="tel" href="tel:+13050000000">Llamar a la tienda</a></li>
+      <li><a href="tel:+13050000000">Llamar</a></li>
     </ul>
   </nav>
-  <hr class="mast-rule" aria-hidden="true">
 </header>
 
 <main>
-  <section class="stat-hero" aria-labelledby="titular">
-    <div class="figure tnum" id="spot" aria-live="polite">$4,349.70<span class="unit">/oz</span></div>
-    <h1 id="titular">Es el oro ahora mismo. Cada precio de esta tienda lo sabe.</h1>
-    <p class="qualifier">Actualizado a las <span id="hora" class="tnum">21:12</span>. El motor vuelve a mirar el oro en <span id="cuenta" class="tnum">60:00</span> y ajusta el metal de cada pieza. La mano de obra no cambia.</p>
+  <section class="hero" aria-labelledby="titular">
+    <p class="kick">El oro ahora mismo</p>
+    <div class="figure tnum" id="spot" aria-live="polite">$4,349.70<span class="unit">/OZ</span></div>
+    <h1 id="titular">Cada precio de esta tienda lo sabe</h1>
+    <p class="qual">Actualizado a las <span id="hora" class="tnum">21:12</span>. El motor vuelve a mirar el oro en <span id="cuenta" class="tnum">60:00</span> y ajusta el metal de cada pieza. La mano de obra no cambia.</p>
     <small class="aviso" id="aviso">Precio orientativo calculado con el oro de hoy. El precio final se confirma en tienda al ver la pieza.</small>
-    <a class="cta-outline" href="#catalogo">Ver el catálogo repreciado <span aria-hidden="true">→</span></a>
+    <p><a class="btn" href="#catalogo">Ver catálogo</a></p>
   </section>
 
-  <div class="stats" role="list">
-    <div role="listitem"><p class="n tnum" id="g14">$81.81</p><p class="l">el gramo de 14k</p></div>
-    <div role="listitem"><p class="n tnum" id="g18">$104.88</p><p class="l">el gramo de 18k</p></div>
-    <div role="listitem"><p class="n tnum" id="repreciadas">8 de 8</p><p class="l">piezas repreciadas</p></div>
-    <div role="listitem"><p class="n tnum">60 min</p><p class="l">entre revisiones</p></div>
+  <div class="wrap">
+    <div class="stats" role="list">
+      <div role="listitem"><p class="n tnum" id="g14">$81.81</p><p class="l">El gramo de 14k</p></div>
+      <div role="listitem"><p class="n tnum" id="g18">$104.88</p><p class="l">El gramo de 18k</p></div>
+      <div role="listitem"><p class="n tnum" id="repreciadas">8 de 8</p><p class="l">Piezas repreciadas</p></div>
+      <div role="listitem"><p class="n tnum">60 min</p><p class="l">Entre revisiones</p></div>
+    </div>
   </div>
 
-  <section class="bloque" id="catalogo" aria-labelledby="h-cat">
-    <h2 id="h-cat">Ocho piezas, un solo precio del oro</h2>
+  <section class="bloque wrap" id="catalogo" aria-labelledby="h-cat">
+    <h2 id="h-cat">Nuestra colección, con el oro de hoy</h2>
     <p class="intro">Metal calculado por peso y kilate, mano de obra fija. Todo orientativo hasta verlo en tienda.</p>
     <div class="grid" id="grid"></div>
   </section>
 
-  <section class="bloque" id="tasa" aria-labelledby="h-tasa">
-    <h2 id="h-tasa">¿Tienes oro? Mira lo que te pagamos hoy</h2>
-    <p class="intro">Dos datos y sale un número. El definitivo, con la pieza en la báscula.</p>
-    <form class="tasa" id="form-tasa" novalidate>
-      <div>
-        <div class="campo">
-          <label for="gramos">Gramos</label>
-          <input id="gramos" name="gramos" type="number" inputmode="decimal" min="0.1" step="0.1" placeholder="35,6" autocomplete="off">
-          <p class="err" id="err-gramos" aria-live="polite"></p>
+  <section class="tasa-band" id="tasa" aria-labelledby="h-tasa">
+    <div class="bloque wrap">
+      <h2 id="h-tasa">¿Tienes oro? Te decimos cuánto</h2>
+      <p class="intro">Dos datos y sale un número. El definitivo, con la pieza en la báscula.</p>
+      <form class="tasa" id="form-tasa" novalidate>
+        <div>
+          <div class="campo">
+            <label for="gramos">Gramos</label>
+            <input id="gramos" name="gramos" type="number" inputmode="decimal" min="0.1" step="0.1" placeholder="35,6" autocomplete="off">
+            <p class="err" id="err-gramos" aria-live="polite"></p>
+          </div>
+          <div class="campo">
+            <label for="kilates">Kilates</label>
+            <select id="kilates" name="kilates">
+              <option value="10">10k</option>
+              <option value="14" selected>14k</option>
+              <option value="18">18k</option>
+              <option value="22">22k</option>
+              <option value="24">24k</option>
+            </select>
+            <p class="err"></p>
+          </div>
         </div>
-        <div class="campo">
-          <label for="kilates">Kilates</label>
-          <select id="kilates" name="kilates">
-            <option value="10">10k</option>
-            <option value="14" selected>14k</option>
-            <option value="18">18k</option>
-            <option value="22">22k</option>
-            <option value="24">24k</option>
-          </select>
-          <p class="err"></p>
+        <div class="resultado" aria-live="polite">
+          <p class="lbl">Te pagamos hoy</p>
+          <p class="hasta tnum" id="hasta">Hasta $0</p>
+          <p class="detalle" id="detalle">Escribe los gramos y te lo calculamos con el oro de ahora.</p>
+          <small class="aviso">Se confirma en tienda con la pieza en la báscula.</small>
+          <p><a class="btn" id="cita" href="tel:+13050000000">Reservar cita en tienda</a></p>
         </div>
-      </div>
-      <div class="resultado" aria-live="polite">
-        <p class="hasta tnum" id="hasta">Hasta $0</p>
-        <p class="detalle" id="detalle">Escribe los gramos y te lo calculo con el oro de ahora.</p>
-        <small class="aviso">Se confirma en tienda con la pieza en la báscula.</small>
-        <p><a class="cta-outline" id="cita" href="tel:+13050000000">Reservar cita en tienda</a></p>
-      </div>
-    </form>
+      </form>
+    </div>
   </section>
 
-  <section class="bloque" aria-labelledby="h-como">
+  <section class="bloque wrap" aria-labelledby="h-como">
     <h2 id="h-como">Cómo se mantiene al día</h2>
     <div class="pasos">
-      <div><span class="num">01</span><p>Mira el oro cada hora en una fuente pública, sin claves ni suscripción.</p></div>
-      <div><span class="num">02</span><p>Recalcula solo el metal: gramos, por pureza del kilate, por precio del gramo. La mano de obra es fija.</p></div>
-      <div><span class="num">03</span><p>Sella cada precio con su hora y con el aviso. Lo que no tiene peso no se toca: mejor un precio viejo que uno inventado.</p></div>
+      <div><p class="n">01</p><h3>Mira el oro</h3><p>Cada hora, en una fuente pública, sin claves ni suscripción.</p></div>
+      <div><p class="n">02</p><h3>Recalcula el metal</h3><p>Gramos, por pureza del kilate, por precio del gramo. La mano de obra es fija.</p></div>
+      <div><p class="n">03</p><h3>Sella el precio</h3><p>Con su hora y con el aviso. Lo que no tiene peso no se toca: mejor un precio viejo que uno inventado.</p></div>
     </div>
   </section>
 </main>
 
-<footer class="foot-stmt">
-  <p class="foot-stmt__line">El oro cambia cada hora. El precio también, con su hora y su aviso.</p>
-  <div class="foot-stmt__meta">
-    <span>Joyería Demo · demo sin marca real · oro de gold-api.com</span>
+<footer class="foot">
+  <div class="wrap">
+    <span data-marca-pie>Joyería Demo · demo sin marca real · oro de gold-api.com</span>
     <a href="https://mialdeastudio.com/" rel="noopener">Hecha por Mialdea Studio</a>
   </div>
 </footer>
@@ -214,9 +222,6 @@ const PUREZA = { 10: 0.417, 14: 0.585, 18: 0.750, 22: 0.916, 24: 0.999 };
 const MARGEN_VENTA = 1.35;
 const PAGO_TASACION = { 24: 0.90, 22: 0.88, 18: 0.85, 14: 0.82, 10: 0.78 };
 const CADA_MIN = 60;
-
-// Último cálculo del motor (precios.json del 2026-09-12 21:12). Es el
-// respaldo si la página no puede consultar el oro por su cuenta.
 const RESPALDO = { spot: 4349.70, actualizado: "2026-09-12T21:12:17+02:00" };
 
 const PIEZAS = [
@@ -230,14 +235,13 @@ const PIEZAS = [
   { id: "franco-18k-28-4",  nombre: "Cadena franco",          tipo: "cadena",   kilates: 18, gramos: 28.4, largo: "24 pulgadas",  mano_obra: 220 },
 ];
 
-// Huecos de foto dibujados a mano, un trazo por tipo de pieza.
-// TODO: sustituir por fotos reales de cada pieza, 800x600.
+// Huecos de foto dibujados a mano. TODO: sustituir por fotos reales sobre blanco, 800x800.
 const DIBUJO = {
-  cadena:   '<path d="M10 40c10-14 22-14 32 0s22 14 32 0 22-14 32 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>',
-  pulsera:  '<ellipse cx="60" cy="40" rx="42" ry="22" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="60" cy="40" rx="30" ry="12" fill="none" stroke="currentColor" stroke-width="2"/>',
-  anillo:   '<circle cx="60" cy="42" r="22" fill="none" stroke="currentColor" stroke-width="4"/><rect x="50" y="10" width="20" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="3"/>',
-  colgante: '<path d="M30 8c10 20 20 22 30 22s20-2 30-22" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="60" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="3"/>',
-  aretes:   '<circle cx="40" cy="42" r="16" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="80" cy="42" r="16" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="40" cy="20" r="3" fill="currentColor"/><circle cx="80" cy="20" r="3" fill="currentColor"/>',
+  cadena:   '<path d="M10 40c10-14 22-14 32 0s22 14 32 0 22-14 32 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>',
+  pulsera:  '<ellipse cx="60" cy="40" rx="42" ry="22" fill="none" stroke="currentColor" stroke-width="4"/><ellipse cx="60" cy="40" rx="30" ry="12" fill="none" stroke="currentColor" stroke-width="2.5"/>',
+  anillo:   '<circle cx="60" cy="42" r="22" fill="none" stroke="currentColor" stroke-width="5"/><rect x="50" y="10" width="20" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="3.5"/>',
+  colgante: '<path d="M30 8c10 20 20 22 30 22s20-2 30-22" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="60" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="4"/>',
+  aretes:   '<circle cx="40" cy="42" r="16" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="80" cy="42" r="16" fill="none" stroke="currentColor" stroke-width="4"/><circle cx="40" cy="20" r="3.5" fill="currentColor"/><circle cx="80" cy="20" r="3.5" fill="currentColor"/>',
 };
 
 const usd = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
@@ -250,11 +254,7 @@ let estado = { spot: RESPALDO.spot, actualizado: new Date(RESPALDO.actualizado),
 
 function precio(p, usdGramo) {
   const metal = p.gramos * PUREZA[p.kilates] * usdGramo;
-  return {
-    metal,
-    venta: Math.round((metal * MARGEN_VENTA + p.mano_obra) / 10) * 10,
-    pagamos: Math.round(metal * PAGO_TASACION[p.kilates] / 5) * 5,
-  };
+  return { metal, venta: Math.round((metal * MARGEN_VENTA + p.mano_obra) / 10) * 10, pagamos: Math.round(metal * PAGO_TASACION[p.kilates] / 5) * 5 };
 }
 
 function pintarCatalogo(pulso) {
@@ -267,7 +267,7 @@ function pintarCatalogo(pulso) {
       <p class="spec">${p.kilates}k · ${fmtG(p.gramos)} g · ${esc(p.largo)}</p>
       <p class="precio tnum${pulso ? " pulse" : ""}">${usd.format(c.venta)}</p>
       <p class="desglose">metal ${usd.format(c.metal)} + mano de obra ${usd.format(p.mano_obra)}</p>
-      <p class="tag">orientativo · confirmar en tienda</p>
+      <p class="tag">Orientativo · confirmar en tienda</p>
     </article>`;
   }).join("");
   if (pulso) setTimeout(() => document.querySelectorAll(".precio.pulse").forEach(e => e.classList.remove("pulse")), 900);
@@ -281,15 +281,13 @@ function pintarCabecera() {
   $("spot").classList.toggle("is-live", estado.vivo);
 }
 
-// Tick del número: de 0 al valor en 500 ms, una sola vez. Es la única
-// animación del hero y existe porque el número ES la página.
 function tick(desde, hasta) {
   const el = $("spot"), t0 = performance.now(), dur = 500;
   const red = matchMedia("(prefers-reduced-motion: reduce)").matches;
   function paso(t) {
     const k = red ? 1 : Math.min(1, (t - t0) / dur);
     const v = desde + (hasta - desde) * (1 - Math.pow(1 - k, 3));
-    el.innerHTML = `${usd2.format(v)}<span class="unit">/oz</span>`;
+    el.innerHTML = `${usd2.format(v)}<span class="unit">/OZ</span>`;
     if (k < 1) requestAnimationFrame(paso);
   }
   requestAnimationFrame(paso);
@@ -303,19 +301,14 @@ async function consultarOro(primera) {
     const antes = estado.spot;
     estado = { spot: Number(d.price), actualizado: new Date(), vivo: true };
     tick(primera ? 0 : antes, estado.spot);
-    pintarCabecera();
-    pintarCatalogo(!primera);
-    calcularTasa();
+    pintarCabecera(); pintarCatalogo(!primera); calcularTasa();
   } catch (e) {
-    // Sin red: se queda el último cálculo del motor, que ya está pintado.
-    estado.vivo = false;
-    pintarCabecera();
+    estado.vivo = false; pintarCabecera();
     if (primera) tick(0, estado.spot);
     $("aviso").textContent = "Precio orientativo con el último oro guardado. El precio final se confirma en tienda al ver la pieza.";
   }
 }
 
-// Cuenta atrás hasta la siguiente revisión. Al llegar a cero, vuelve a mirar.
 function cuentaAtras() {
   const fin = estado.actualizado.getTime() + CADA_MIN * 60000;
   const s = Math.max(0, Math.round((fin - Date.now()) / 1000));
@@ -327,28 +320,15 @@ function calcularTasa() {
   const inp = $("gramos"), err = $("err-gramos"), hasta = $("hasta"), det = $("detalle");
   const g = parseFloat(String(inp.value).replace(",", "."));
   const k = Number($("kilates").value);
-  if (!inp.value) {
-    inp.setAttribute("aria-invalid", "false"); err.textContent = "";
-    hasta.textContent = "Hasta $0"; hasta.classList.remove("ok");
-    det.textContent = "Escribe los gramos y te lo calculo con el oro de ahora.";
-    return;
-  }
-  if (!(g > 0) || g > 5000) {
-    inp.setAttribute("aria-invalid", "true"); err.textContent = "Pon un peso en gramos, por ejemplo 35,6.";
-    hasta.textContent = "Hasta $0"; hasta.classList.remove("ok");
-    det.textContent = "Con el peso correcto sale el número.";
-    return;
-  }
+  if (!inp.value) { inp.setAttribute("aria-invalid", "false"); err.textContent = ""; hasta.textContent = "Hasta $0"; hasta.classList.remove("ok"); det.textContent = "Escribe los gramos y te lo calculamos con el oro de ahora."; return; }
+  if (!(g > 0) || g > 5000) { inp.setAttribute("aria-invalid", "true"); err.textContent = "Pon un peso en gramos, por ejemplo 35,6."; hasta.textContent = "Hasta $0"; hasta.classList.remove("ok"); det.textContent = "Con el peso correcto sale el número."; return; }
   inp.setAttribute("aria-invalid", "false"); err.textContent = "";
   const c = precio({ gramos: g, kilates: k, mano_obra: 0 }, estado.spot / GRAMOS_POR_ONZA);
-  hasta.textContent = `Hasta ${usd.format(c.pagamos)}`;
-  hasta.classList.add("ok");
+  hasta.textContent = `Hasta ${usd.format(c.pagamos)}`; hasta.classList.add("ok");
   det.textContent = `Por ${fmtG(g)} g de ${k}k con el oro a ${usd2.format(estado.spot)} la onza. El metal vale ${usd.format(c.metal)} y pagamos el ${Math.round(PAGO_TASACION[k] * 100)} %.`;
 }
 
-pintarCabecera();
-pintarCatalogo(false);
-consultarOro(true);
+pintarCabecera(); pintarCatalogo(false); consultarOro(true);
 setInterval(cuentaAtras, 1000);
 $("gramos").addEventListener("input", calcularTasa);
 $("kilates").addEventListener("change", calcularTasa);
