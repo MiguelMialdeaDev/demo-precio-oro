@@ -1,0 +1,96 @@
+{
+ "spot_calibracion": 4349.7,
+ "piezas": [
+  {
+   "tipo": "Cadena cubana",
+   "titulo": "Bracelet cuban link 84.9 dwt , 132 grams in 14kt",
+   "kilates": 14,
+   "gramos": 132.0,
+   "precio_web": 12400.0,
+   "metal_hoy": 10799,
+   "factor": 1.1483,
+   "img": "https://cdn.shopify.com/s/files/1/0623/1362/7900/files/WhatsAppImage2026-08-19at2.58.10PM.jpg",
+   "img_local": "assets-ariel/p1.jpg",
+   "bytes": 54153,
+   "jpeg": true
+  },
+  {
+   "tipo": "Pulsera",
+   "titulo": "Bracelet 14kt 30.2DWT 8.75’",
+   "kilates": 14,
+   "gramos": 46.97,
+   "precio_web": 4800.0,
+   "metal_hoy": 3843,
+   "factor": 1.2492,
+   "img": "https://cdn.shopify.com/s/files/1/0623/1362/7900/files/IMG-8824.png",
+   "img_local": "assets-ariel/p2.jpg",
+   "bytes": 456942,
+   "jpeg": true
+  },
+  {
+   "tipo": "Anillo",
+   "titulo": "Ring Band , 14kt W/ Diamond 3.4 dwt",
+   "kilates": 14,
+   "gramos": 5.29,
+   "precio_web": 2100.0,
+   "metal_hoy": 433,
+   "factor": 4.8524,
+   "img": "https://cdn.shopify.com/s/files/1/0623/1362/7900/files/WhatsAppImage2026-09-05at5.46.45PM.jpg",
+   "img_local": "assets-ariel/p3.jpg",
+   "bytes": 205289,
+   "jpeg": true
+  },
+  {
+   "tipo": "Colgante",
+   "titulo": "CHARM 14KT/21.4g/3.25''",
+   "kilates": 14,
+   "gramos": 21.4,
+   "precio_web": 2100.0,
+   "metal_hoy": 1751,
+   "factor": 1.1995,
+   "img": "https://cdn.shopify.com/s/files/1/0623/1362/7900/files/IMG_1767_1.jpg",
+   "img_local": "assets-ariel/p4.jpg",
+   "bytes": 29467,
+   "jpeg": true
+  },
+  {
+   "tipo": "Cadena",
+   "titulo": "PAGO FINAL CHAIN CUBAN LINK 14KT/27.5''/63.6g/ 5.26MM",
+   "kilates": 14,
+   "gramos": 63.6,
+   "precio_web": 5465.0,
+   "metal_hoy": 5203,
+   "factor": 1.0503,
+   "img": "https://cdn.shopify.com/s/files/1/0623/1362/7900/files/IMG_1740_1.jpg",
+   "img_local": "assets-ariel/p5.jpg",
+   "bytes": 46016,
+   "jpeg": true
+  },
+  {
+   "tipo": "Pulsera cubana",
+   "titulo": "Chain Cuban link 14kt , 22.9 dwt",
+   "kilates": 14,
+   "gramos": 35.61,
+   "precio_web": 4800.0,
+   "metal_hoy": 2913,
+   "factor": 1.6476,
+   "img": "https://cdn.shopify.com/s/files/1/0623/1362/7900/files/WhatsAppImage2026-09-11at11.16.16AM.jpg",
+   "img_local": "assets-ariel/p6.jpg",
+   "bytes": 58380,
+   "jpeg": true
+  },
+  {
+   "tipo": "Dije",
+   "titulo": "Chain yellow gold 14kt. 13.47DWT  Cruz 14kt",
+   "kilates": 14,
+   "gramos": 20.95,
+   "precio_web": 3900.0,
+   "metal_hoy": 1714,
+   "factor": 2.2755,
+   "img": "https://cdn.shopify.com/s/files/1/0623/1362/7900/files/IMG-5608.heic",
+   "img_local": "assets-ariel/p7.jpg",
+   "bytes": 124387,
+   "jpeg": true
+  }
+ ]
+}

@@ -32,3 +32,11 @@ La pureza por kilate es la real (14k = 0,585, 18k = 0,750). Solo se recalcula el
 El motor ya lee kilate y peso de títulos tal como están escritos en la tienda (`14kt`, `22.9 dwt`, `81.7g`). En producción, en vez de escribir `precios.json`, escribiría el precio por la Admin API en cada producto que tenga esos dos datos, y el aviso con la hora iría en un metafield que el tema pinta debajo del precio. Las piezas sin peso no se tocan: mejor un precio viejo que uno inventado.
 
 Fuente del oro: `https://api.gold-api.com/price/XAU`, gratuita y sin clave. En producción conviene una segunda fuente de respaldo.
+
+## El sitio completo (sitio/)
+
+`python build_sitio.py` genera nueve páginas en `sitio/` con el contenido real de arielsjewelry.com: inicio, colección (12 cubanas reales), ficha de producto, tasa tu oro, financiación, nosotros, tiendas (las siete, con llamar y cómo llegar), contacto y embajadores. Comparten `sitio.css`, `tokens.css` y `oro.js` (el oro en vivo y la tasadora). Las fotos y el logo están en `assets-ariel/` y son suyos: solo para enseñárselo a ellos.
+
+## Versiones
+
+`index.html` lleva el logo y seis piezas reales de Ariel Joyerías, publicado solo para enseñárselo a ellos (va con `noindex`). `demo-neutra.html` es la misma demo sin marca.
