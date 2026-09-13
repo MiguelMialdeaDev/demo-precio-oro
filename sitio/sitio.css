@@ -16,7 +16,7 @@ img { max-width: 100%; height: auto; display: block; }
 .center { text-align: center; }
 .aviso { display: block; font-size: var(--text-sm); color: var(--color-muted); max-width: var(--measure); margin-inline: auto; }
 .intro { text-align: center; max-width: var(--measure); margin: var(--space-sm) auto 0; font-size: var(--text-lg); color: var(--color-ink-2); }
-section.bloque { padding: var(--space-2xl) 0; }
+section.bloque { padding-block: var(--space-2xl); }
 .band { background: var(--color-paper-2); }
 .band-warm { background: var(--color-paper-warm); }
 
@@ -42,7 +42,7 @@ section.bloque { padding: var(--space-2xl) 0; }
 .acciones { display: flex; flex-wrap: wrap; gap: var(--space-sm); justify-content: center; margin-top: var(--space-lg); }
 
 /* inicio */
-.hero { display: grid; gap: var(--space-xl); align-items: center; padding: var(--space-2xl) 0; }
+.hero { display: grid; gap: var(--space-xl); align-items: center; padding-block: var(--space-2xl); }
 @media (min-width: 900px) { .hero { grid-template-columns: 1.1fr 1fr; } }
 .hero .kick { font-size: var(--text-sm); letter-spacing: .18em; text-transform: uppercase; color: var(--color-ink-2); }
 .hero h1 { font-size: clamp(1.5rem, 4vw, 2.6rem); margin-top: var(--space-sm); }
@@ -72,7 +72,7 @@ section.bloque { padding: var(--space-2xl) 0; }
 .filtros button[aria-pressed="true"] { border-color: var(--color-accent); color: var(--color-accent); }
 
 /* producto */
-.producto { display: grid; gap: var(--space-xl); padding: var(--space-2xl) 0; }
+.producto { display: grid; gap: var(--space-xl); padding-block: var(--space-2xl); }
 @media (min-width: 900px) { .producto { grid-template-columns: 1fr 1fr; align-items: start; } }
 .producto figure { margin: 0; border: var(--rule-hair) solid var(--color-rule); aspect-ratio: 1; overflow: hidden; }
 .producto figure img { width: 100%; height: 100%; object-fit: cover; }
