@@ -245,6 +245,8 @@ section { padding-block: var(--space-3xl); }
 .doc p + p { margin-top: var(--space-md); }
 .doc h2 { margin-top: var(--space-xl); font-size: clamp(1.5rem, 3vw, 2.2rem); }
 .doc .lead { margin-top: var(--space-lg); }
+.retrato { margin: var(--space-lg) 0 0; width: min(280px, 100%); aspect-ratio: 1; overflow: hidden; border: 1px solid var(--color-rule); }
+.retrato img { width: 100%; height: 100%; object-fit: cover; }
 .cita { font-family: var(--font-display); font-size: clamp(1.6rem, 3.6vw, 2.6rem); font-weight: 500; line-height: 1.2; max-width: 22ch; border-left: 3px solid var(--color-gold); padding-left: var(--space-lg); margin: var(--space-2xl) 0; }
 .dos { display: grid; gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); margin-top: var(--space-xl); }
 .tarjeta { padding: var(--space-lg) 0 0; border-top: 3px solid var(--color-gold); }
@@ -339,6 +341,7 @@ def main() -> None:
   <div>
     <p class="kick">La historia</p>
     <h2>Un anillo y un bolsillo lleno de sueños</h2>
+    <figure class="retrato"><img src="{ASSETS}/ariel.jpg" alt="Ariel, fundador de Ariel's Jewelry" loading="lazy"></figure>
     <p class="cita" style="margin:var(--space-lg) 0 0">Todo el mundo merece acceso a joyas de calidad.</p>
   </div>
   <div class="doc">
