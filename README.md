@@ -37,6 +37,10 @@ Fuente del oro: `https://api.gold-api.com/price/XAU`, gratuita y sin clave. En p
 
 `python build_sitio.py` genera nueve páginas en `sitio/` con el contenido real de arielsjewelry.com: inicio, colección (12 cubanas reales), ficha de producto, tasa tu oro, financiación, nosotros, tiendas (las siete, con llamar y cómo llegar), contacto y embajadores. Comparten `sitio.css`, `tokens.css` y `oro.js` (el oro en vivo y la tasadora). Las fotos y el logo están en `assets-ariel/` y son suyos: solo para enseñárselo a ellos.
 
+## La segunda versión (sitio-v2/)
+
+`python build_sitio_v2.py` genera las mismas nueve páginas con otro diseño: misma paleta, titulares en Cormorant Garamond, cuerpo en Jost, portada partida, colección con filtros laterales y la tasadora sobre azul. Reutiliza los datos y las fotos del v1.
+
 ## Versiones
 
 `index.html` lleva el logo y seis piezas reales de Ariel Joyerías, publicado solo para enseñárselo a ellos (va con `noindex`). `demo-neutra.html` es la misma demo sin marca.

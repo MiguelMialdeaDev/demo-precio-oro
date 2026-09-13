@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Tasa tu oro · Ariel Joyerías (demo v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="sitio.css">
+</head>
+<body>
+<div class="announce"><div class="wrap">
+  <span>Cuban Link hecho a mano en Miami · precios al día con el oro</span>
+  <a href="tel:+13054189188">(305) 418-9188</a>
+</div></div>
+<header class="head wrap">
+  <a href="index.html" class="logo"><img src="../assets-ariel/logo.jpg" alt="Ariel Joyerías"></a>
+  <nav aria-label="Principal"><ul><li><a href="coleccion.html">Colección</a></li><li><a href="tasa-tu-oro.html" aria-current="page">Tasa tu oro</a></li><li><a href="financiacion.html">Financiación</a></li><li><a href="tiendas.html">Tiendas</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></nav>
+  <a class="btn small" href="tel:+13054189188">Llamar</a>
+</header>
+<main>
+
+<section class="on-blue tasa-hero"><div class="wrap">
+  <p class="kick">El oro ahora mismo</p>
+  <p class="figure tnum" data-oro>$4,349.70<span class="unit">/oz</span></p>
+  <h1>¿Tienes oro? Te decimos cuánto te pagamos hoy</h1>
+  <p class="lead">Dos datos y sale un número. El definitivo, con la pieza en la báscula en cualquiera de las siete tiendas.</p>
+</div></section>
+<div class="wrap tasa-card">
+  <form class="tasa" id="form-tasa" novalidate>
+    <div>
+      <div class="campo"><label for="gramos">Gramos</label><input id="gramos" name="gramos" type="number" inputmode="decimal" min="0.1" step="0.1" placeholder="35,6" autocomplete="off"><p class="err" id="err-gramos" aria-live="polite"></p></div>
+      <div class="campo"><label for="kilates">Kilates</label><select id="kilates" name="kilates"><option value="10">10k</option><option value="14" selected>14k</option><option value="18">18k</option><option value="22">22k</option><option value="24">24k</option></select><p class="err"></p></div>
+    </div>
+    <div class="resultado" aria-live="polite">
+      <p class="lbl">Te pagamos hoy</p>
+      <p class="hasta tnum" id="hasta">Hasta $0</p>
+      <p class="detalle" id="detalle">Escribe los gramos y te lo calculamos con el oro de ahora.</p>
+      <small class="aviso">Se confirma en tienda con la pieza en la báscula.</small>
+      <p><a class="btn" href="tel:+13054189188">Reservar cita en tienda</a></p>
+    </div>
+  </form>
+</div>
+<section class="wrap" style="padding-top:0">
+  <p class="kick">Así funciona</p>
+  <div class="pasos">
+    <div><p class="n">1</p><div><h3>Miramos el oro</h3><p>Cada hora, en una fuente pública. El número de arriba es el de ahora.</p></div></div>
+    <div><p class="n">2</p><div><h3>Calculamos el metal</h3><p>Gramos, por pureza del kilate, por precio del gramo. Pagamos del 78 al 90 % según el kilate.</p></div></div>
+    <div><p class="n">3</p><div><h3>Lo confirmamos contigo</h3><p>Trae la pieza a cualquier tienda. La pesamos delante de ti y cerramos el precio.</p></div></div>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <img src="../assets-ariel/logo.jpg" alt="" aria-hidden="true" class="foot-logo">
+      <p class="foot-claim">Un anillo y un bolsillo lleno de sueños. Hoy, siete tiendas.</p>
+    </div>
+    <div>
+      <p class="foot-h">Tiendas</p>
+      <ul class="foot-list"><li><a href="tel:+13052230437"><span>Tienda 1</span> (305) 223-0437</a></li><li><a href="tel:+13052641466"><span>Tienda 2</span> (305) 264-1466</a></li><li><a href="tel:+13052260313"><span>Tienda 3</span> (305) 226-0313</a></li><li><a href="tel:+13056421475"><span>Tienda 4</span> (305) 642-1475</a></li><li><a href="tel:+13058261475"><span>Tienda 5</span> (305) 826-1475</a></li><li><a href="tel:+13054189188"><span>Tienda 6</span> (305) 418-9188</a></li><li><a href="tel:+13058937937"><span>Tienda 7</span> (305) 893-7937</a></li></ul>
+    </div>
+    <div>
+      <p class="foot-h">Contacto</p>
+      <ul class="foot-list">
+        <li><a href="tel:+13054189188">(305) 418-9188</a></li>
+        <li><a href="mailto:arielsjewelry.online@gmail.com">arielsjewelry.online@gmail.com</a></li>
+        <li><a href="financiacion.html">Financiación</a></li>
+        <li><a href="embajadores.html">Embajadores</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-meta"><span>Ariel Joyerías · demo para enseñar, no es su tienda · oro de gold-api.com</span><a href="https://mialdeastudio.com/" rel="noopener">Hecha por Mialdea Studio</a></div>
+</footer>
+<script src="oro.js"></script>
+</body>
+</html>
