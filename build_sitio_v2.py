@@ -335,6 +335,18 @@ def main() -> None:
   <div class="sec-head"><div><p class="kick">Piezas reales de la tienda</p><h2>Nuestra colección de cubanas</h2></div><a class="btn ghost" href="coleccion.html">Ver todo</a></div>
   <div class="bento">{''.join(card(p) for p in destacadas)}</div>
 </section>
+<section class="on-warm"><div class="wrap split-doc">
+  <div>
+    <p class="kick">La historia</p>
+    <h2>Un anillo y un bolsillo lleno de sueños</h2>
+    <p class="cita" style="margin:var(--space-lg) 0 0">Todo el mundo merece acceso a joyas de calidad.</p>
+  </div>
+  <div class="doc">
+    <p class="lead" style="margin-top:0">Ariel trabajaba de cajero en Publix y se gastó el sueldo de una semana en un anillo. Un cliente se fijó en él en la caja, Ariel se lo vendió por el doble, y aquellos cien dólares plantaron la semilla de todo lo que vino después.</p>
+    <p>Empezó vendiendo joyas en la calle. Hoy son siete tiendas en Miami, un negocio de familia con su esposa Yuliet y su cuñada Yulimar, y un canal de YouTube con cerca de 800.000 personas viendo cómo se compra y se vende el oro cada semana.</p>
+    <div class="acciones"><a class="btn" href="nosotros.html">Leer la historia</a><a class="btn ghost" href="https://www.youtube.com/@arielsjoyeria" rel="noopener" target="_blank">Ver el canal</a></div>
+  </div>
+</div></section>
 <section class="on-blue"><div class="wrap" style="display:grid;gap:var(--space-lg);grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));align-items:center">
   <div><p class="kick">Compramos oro</p><h2>¿Tienes oro? Te decimos cuánto</h2><p class="lead">Dos datos y sale un número. En cualquiera de las siete tiendas lo confirmamos con la pieza en la mano.</p></div>
   <div class="acciones" style="margin:0;justify-content:flex-start"><a class="btn white" href="tasa-tu-oro.html">Tasar mi oro</a><a class="btn gold" href="tiendas.html">Ver tiendas</a></div>

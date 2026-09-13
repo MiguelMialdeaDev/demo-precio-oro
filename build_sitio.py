@@ -37,7 +37,7 @@ TIENDAS = [
 ]
 
 NAV = [("index.html", "Inicio"), ("coleccion.html", "Colección"), ("tasa-tu-oro.html", "Tasa tu oro"),
-       ("financiacion.html", "Financiación"), ("tiendas.html", "Tiendas"), ("nosotros.html", "Nosotros"),
+       ("financiacion.html", "Financiación"), ("tiendas.html", "Tiendas"), ("nosotros.html", "La historia"),
        ("contacto.html", "Contacto")]
 
 
@@ -407,6 +407,12 @@ def main() -> None:
   <div class="grid">{''.join(card(p) for p in destacadas)}</div>
   <div class="acciones"><a class="btn" href="coleccion.html">Compra ahora</a></div>
 </section>
+<section class="band-warm"><div class="wrap bloque">
+  <h2 class="center">Un anillo y un bolsillo lleno de sueños</h2>
+  <p class="intro">Ariel trabajaba de cajero en Publix y se gastó el sueldo de una semana en un anillo. Un cliente se fijó en él en la caja, Ariel se lo vendió por el doble, y aquellos cien dólares plantaron la semilla de todo lo que vino después.</p>
+  <p class="intro">Empezó vendiendo joyas en la calle. Hoy son siete tiendas en Miami, un negocio de familia con Yuliet y Yulimar, y un canal de YouTube con cerca de 800.000 personas viendo cómo se compra y se vende el oro cada semana.</p>
+  <div class="acciones"><a class="btn" href="nosotros.html">Leer la historia</a><a class="btn ghost" href="https://www.youtube.com/@arielsjoyeria" rel="noopener" target="_blank">Ver el canal</a></div>
+</div></section>
 <section class="band"><div class="wrap bloque">
   <h2 class="center">¿Tienes oro? Te decimos cuánto</h2>
   <p class="intro">Dos datos y sale un número. Y en cualquiera de las siete tiendas lo confirmamos con la pieza en la mano.</p>
