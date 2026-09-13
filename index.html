@@ -37,7 +37,8 @@ a { color: inherit; }
 .head { padding: var(--space-xl) var(--page-gutter) var(--space-md); text-align: center; }
 .wordmark { font-family: var(--font-display); font-size: clamp(1.4rem, 4.5vw, 2.6rem); letter-spacing: .12em; text-transform: uppercase; }
 .wordmark .gold { color: var(--color-gold); }
-.head nav ul { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: var(--space-lg); list-style: none; margin: var(--space-md) 0 0; padding: 0; }
+.head nav ul { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: var(--space-sm) var(--space-md); list-style: none; margin: var(--space-md) 0 0; padding: 0; }
+@media (min-width: 640px) { .head nav ul { gap: var(--space-lg); } }
 .head nav a { font-size: var(--text-sm); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; white-space: nowrap; padding: var(--space-2xs) 0; border-bottom: 2px solid transparent; transition: border-color var(--dur-fast) var(--ease-out); }
 .head nav a:hover { border-bottom-color: var(--color-accent); }
 
@@ -52,7 +53,7 @@ a { color: inherit; }
 /* ── hero (Stat-Led, centrado como su tema) ── */
 .hero { background: var(--color-paper-warm); padding: var(--space-2xl) var(--page-gutter); text-align: center; }
 .hero .kick { font-size: var(--text-sm); letter-spacing: .18em; text-transform: uppercase; color: var(--color-ink-2); }
-.figure { font-family: var(--font-display); font-size: var(--text-display); line-height: 1.05; letter-spacing: .02em; margin-top: var(--space-sm); overflow-wrap: anywhere; }
+.figure { font-family: var(--font-display); font-size: var(--text-display); line-height: 1.05; letter-spacing: .02em; margin-top: var(--space-sm); white-space: nowrap; }
 .figure .unit { font-size: .32em; color: var(--color-muted); letter-spacing: .08em; margin-left: .2em; }
 .figure.is-live::after { content: ""; display: inline-block; width: .13em; height: .13em; margin-left: .3em; border-radius: 50%; background: var(--color-ok); vertical-align: middle; }
 .hero h1 { font-size: clamp(1.1rem, 2.6vw, 1.7rem); max-width: 30ch; margin: var(--space-lg) auto 0; }

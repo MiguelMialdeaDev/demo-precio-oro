@@ -27,7 +27,7 @@
 
   --text-xs: 0.78rem; --text-sm: 0.95rem; --text-md: 1.1rem; --text-lg: 1.3rem;
   --text-xl: 1.7rem; --text-2xl: 2.2rem;
-  --text-display: clamp(2.6rem, 8.5vw, 6rem);
+  --text-display: clamp(2rem, 8.5vw, 6rem);
 
   --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px;
   --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px;
